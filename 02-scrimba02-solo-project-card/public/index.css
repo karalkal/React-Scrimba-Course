@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #1C1C1C;
+    font-family: 'Inter', sans-serif;
+    padding: 35px;
+}
+
+/*  GRID OF THREE MAX  */
+.card--container {
+    display: block;
+    float: left;
+    width: 29.3333%;
+    margin: 2%;
+    height: 868px;
+    background: #23252C;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card--image {
+    width: 317px;
+    height: 317px;
+    margin: 44px auto 0 auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card--content {
+    background: #1A1B21;
+    width: 317px;
+    margin: 0 auto;
+}
+
+.name {
+    background: #1A1B21;
+    margin-top: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+}
+
+.role {
+    margin-top: 6px;
+    color: #F3BF99;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+}
+
+.website {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.contact--btns {
+    margin: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.email--button {
+    justify-content: center;
+    padding: 11px;
+    width: 115px;
+    height: 34px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: none;
+    margin-right: 8px;
+}
+
+.email--button>i {
+    margin-right: 8px;
+}
+
+.linkedin--button {
+    justify-content: center;
+    padding: 11px;
+    width: 115px;
+    height: 34px;
+    background: #5093E2;
+    border-radius: 6px;
+    border: none;
+    margin-left: 8px;
+    color: white;
+}
+
+.linkedin--button>i {
+    margin-right: 8px;
+}
+
+.card--info {
+    margin: 24px 35px;
+    color: white;
+    line-height: 1.05em;
+}
+
+.card--info>h4 {
+    margin-top: 6px;
+}
+
+.card--info>p {
+    margin: 6px 0 17px 0;
+    font-weight: 400;
+    font-size: 11px;
+    color: #F5F5F5;
+}
+
+.card--footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 317px;
+    height: 58px;
+    background: #161619;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.card--footer--icon {
+    border-radius: 6px;
+    height: 16px;
+    width: 16px;
+    background: #918E9B;
+    text-align: center;
+    padding: 8px;
+}
+
+/*
+@media screen and (min-width:320px){} // mobile portrait
+@media screen and (min-width:480px){} // mobile landscape
+@media screen and (min-width:768px){} // ipad portrait
+@media screen and (min-width:1024px){} // browser, ipad landscape
+@media screen and (min-width:1200px){} // browser
+@media screen and (min-width:1600px){} // browser
+*/
+
+
+@media screen and (max-width:1200px) {
+    .card--container {
+        width: 42%;
+    }
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 768px) {
+    .card--container {
+        width: 96%;
+    }
+}
