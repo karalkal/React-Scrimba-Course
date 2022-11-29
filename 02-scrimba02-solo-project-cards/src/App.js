@@ -20,8 +20,7 @@ function App() {
                 Etiam semper metus ac augue viverra, sit amet laoreet mauris efficitur. </p>
               <h4>Interests</h4>
               <p>Donec sollicitudin justo accumsan sapien mollis pulvinar. Praesent nec ipsum sit amet dui gravida pellentesque at nec lacus.
-                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus.
-                Cras fringilla consequat velit, a semper ligula gravida sit amet. </p>
+                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus. </p>
             </div>
           </div>
 
@@ -45,8 +44,8 @@ function App() {
             <p className="role">Role Role Role</p>
             <p className="website">www.example.com</p>
             <div className="contact--btns">
-              <button className="email--button"><img src="images/icons/email-icon.png" alt="email icon" /><span>Email</span></button>
-              <button className="linkedin--button"><img src="images/icons/linkedin.png" alt="linkedin icon" /><span>LinkedIn</span></button>
+              <button className="email--button"><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></button>
+              <button className="linkedin--button"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
             </div>
             <div className="card--info">
               <h4>About</h4>
@@ -54,8 +53,7 @@ function App() {
                 Etiam semper metus ac augue viverra, sit amet laoreet mauris efficitur. </p>
               <h4>Interests</h4>
               <p>Donec sollicitudin justo accumsan sapien mollis pulvinar. Praesent nec ipsum sit amet dui gravida pellentesque at nec lacus.
-                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus.
-                Cras fringilla consequat velit, a semper ligula gravida sit amet. </p>
+                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus. </p>
             </div>
           </div>
 
@@ -80,8 +78,8 @@ function App() {
             <p className="role">Role Role Role</p>
             <p className="website">www.example.com</p>
             <div className="contact--btns">
-              <button className="email--button"><img src="images/icons/email-icon.png" alt="email icon" /><span>Email</span></button>
-              <button className="linkedin--button"><img src="images/icons/linkedin.png" alt="linkedin icon" /><span>LinkedIn</span></button>
+              <button className="email--button"><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></button>
+              <button className="linkedin--button"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
             </div>
             <div className="card--info">
               <h4>About</h4>
@@ -89,8 +87,7 @@ function App() {
                 Etiam semper metus ac augue viverra, sit amet laoreet mauris efficitur.  </p>
               <h4>Interests</h4>
               <p>Donec sollicitudin justo accumsan sapien mollis pulvinar. Praesent nec ipsum sit amet dui gravida pellentesque at nec lacus.
-                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus.
-                Cras fringilla consequat velit, a semper ligula gravida sit amet. </p>
+                Nam sit amet ullamcorper enim. Proin vel euismod nulla, eget laoreet purus. </p>
             </div>
           </div>
 

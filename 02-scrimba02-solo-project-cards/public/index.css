@@ -123,12 +123,13 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 317px;
-    height: 58px;
+    width: 247px; /* no idea why this is happeng but it does not seem to work with default 317px */
+    height: 32px;
     background: #161619;
     border-radius: 0px 0px 10px 10px;
     margin: 0 auto;
-    padding-top: 15px;
+    padding: 16px 35px;
+
 }
 
 .card--footer--icon {
