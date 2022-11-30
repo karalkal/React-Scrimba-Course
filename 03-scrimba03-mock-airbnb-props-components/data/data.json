@@ -1,0 +1,109 @@
+[
+    {
+        "id": 1,
+        "name": "Bugee Jumping",
+        "image": "./data/images/bungee.jpg",
+        "rating": {
+            "score": 10,
+            "count": 8
+        },
+        "location": "Austrian Alps",
+        "price": {
+            "value": 110,
+            "currency": "€"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Fado Music",
+        "image": "../data/images/fado.jpg",
+        "rating": {
+            "score": 10,
+            "count": 11
+        },
+        "location": "Lisbon"
+    },
+    {
+        "id": 3,
+        "name": "Wine Drinking",
+        "image": "./data/images/france.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "Anywhere",
+        "price": {
+            "value": 110,
+            "currency": "$"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Kitesurfing",
+        "image": "./data/images/kitesurfing.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "In the Water :-)",
+        "price": {
+            "value": 11011111
+        }
+    },
+    {
+        "id": 5,
+        "name": "Hiking",
+        "image": "./data/images/norway.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "Norway (for example)",
+        "price": {
+            "value": 88,
+            "currency": "£"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Street Strolling",
+        "image": "./data/images/rome.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "Anywhere in Italy",
+        "price": {
+            "value": 88,
+            "currency": "€"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Basejumping",
+        "image": "./data/images/sardinia.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "Sardinia",
+        "price": {
+            "value": 88,
+            "currency": "€"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Skiing",
+        "image": "./data/images/skiing.jpg",
+        "rating": {
+            "score": 10,
+            "count": 4
+        },
+        "location": "France",
+        "price": {
+            "value": 88,
+            "currency": "€"
+        }
+    }
+]

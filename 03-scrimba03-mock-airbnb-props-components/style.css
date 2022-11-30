@@ -9,11 +9,11 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    border-radius: 9px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
@@ -45,7 +45,6 @@ nav {
     align-self: center;
 }
 
-
 #hero>h1 {
     font-weight: 600;
     font-size: 36px;
@@ -56,4 +55,85 @@ nav {
     margin-top: 17px;
     font-weight: 300;
     font-size: 16px;
+}
+
+/*  GRID OF FOUR  */
+#activities--panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-weight: 300;
+    font-size: 12px;
+    width: 29.3333%;
+    margin: 2%;
+    padding: 11px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.card--image {
+    margin: 0 auto; /* centered */
+    height: 350px;
+    width: 80%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+    border-radius: 9px;
+}
+
+.card--activity {
+    margin-top: 11px;
+    font-size: 1.7em;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.card--rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+
+.span--rating--stars {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.span--rating--stars>i {
+    color: var(--magenta);
+}
+
+.span--rating--count {
+    color: var(--magenta);
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+
+.sep--upper,
+.sep--lower {
+    margin: 11px 0;
+    color:var(--lightgrey);
+}
+
+.span--location {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.span--location>i {
+    font-size: 1.2em;
+    color: var(--magenta);
+}
+
+.card--price {
+    margin-top: 11px;
+    text-align: right;
+    font-size: 1.3em;
 }

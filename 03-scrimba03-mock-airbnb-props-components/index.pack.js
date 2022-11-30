@@ -63,11 +63,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(14);
+} else {
+  module.exports = __webpack_require__(13);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -257,21 +272,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(10);
-} else {
-  module.exports = __webpack_require__(9);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -376,12 +376,12 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(18);
 } else {
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(17);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 4 */
@@ -395,17 +395,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = App;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Navbar = __webpack_require__(16);
+var _Navbar = __webpack_require__(9);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
-var _Hero = __webpack_require__(17);
+var _Hero = __webpack_require__(7);
 
 var _Hero2 = _interopRequireDefault(_Hero);
+
+var _Main = __webpack_require__(8);
+
+var _Main2 = _interopRequireDefault(_Main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -414,7 +418,8 @@ function App() {
         "div",
         null,
         _react2.default.createElement(_Navbar2.default, null),
-        _react2.default.createElement(_Hero2.default, null)
+        _react2.default.createElement(_Hero2.default, null),
+        _react2.default.createElement(_Main2.default, null)
     );
 }
 
@@ -457,12 +462,12 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(8);
+  module.exports = __webpack_require__(12);
 } else {
-  module.exports = __webpack_require__(7);
+  module.exports = __webpack_require__(11);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -471,7 +476,192 @@ if (process.env.NODE_ENV === 'production') {
 "use strict";
 
 
-var _react = __webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Card;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Card(props) {
+    var _props$item = props.item,
+        id = _props$item.id,
+        name = _props$item.name,
+        image = _props$item.image,
+        rating = _props$item.rating,
+        location = _props$item.location,
+        price = _props$item.price;
+
+    console.log(price);
+    return _react2.default.createElement(
+        "div",
+        { className: "card" },
+        _react2.default.createElement("img", { className: "card--image", src: image }),
+        _react2.default.createElement(
+            "p",
+            { className: "card--activity" },
+            name
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "card--rating" },
+            _react2.default.createElement(
+                "span",
+                { className: "span--rating--stars" },
+                rating.score,
+                " ",
+                _react2.default.createElement("i", { className: "fa-sharp fa-solid fa-star" })
+            ),
+            _react2.default.createElement(
+                "span",
+                null,
+                "based on\xA0",
+                _react2.default.createElement(
+                    "span",
+                    { className: "span--rating--count" },
+                    rating.count
+                ),
+                "\xA0reviews"
+            )
+        ),
+        _react2.default.createElement("hr", { className: "sep--upper" }),
+        _react2.default.createElement(
+            "p",
+            { className: "span--location" },
+            _react2.default.createElement("i", { className: "fa-solid fa-location-dot" }),
+            "\xA0\xA0",
+            location
+        ),
+        _react2.default.createElement("hr", { className: "sep--lower" }),
+        _react2.default.createElement(
+            "p",
+            { className: "card--price" },
+            price !== undefined && typeof price.value === "number" && price.currency !== undefined ? price.currency + price.value.toFixed(2) : "Free"
+        )
+    );
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Hero;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Hero() {
+    return _react2.default.createElement(
+        "section",
+        { id: "hero" },
+        _react2.default.createElement(
+            "div",
+            { id: "hero--img--container" },
+            _react2.default.createElement("img", { id: "hero--image", src: "../images/photo-grid.png", alt: "photo grid" })
+        ),
+        _react2.default.createElement(
+            "h1",
+            null,
+            "Online Experiences"
+        ),
+        _react2.default.createElement(
+            "h4",
+            null,
+            "Join unique interactive activities led by ",
+            _react2.default.createElement("br", null),
+            "one-of-a-kind hosts\u2014all without leaving ",
+            _react2.default.createElement("br", null),
+            " home."
+        )
+    );
+}
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Main;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Card = __webpack_require__(6);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var activities = __webpack_require__(21);
+
+function Main() {
+    // console.log(activities)
+    return _react2.default.createElement(
+        "section",
+        { id: "activities--panel" },
+        activities.map(function (item) {
+            return _react2.default.createElement(_Card2.default, { key: item.id, item: item });
+        })
+    );
+}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Navbar;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Navbar() {
+    return _react2.default.createElement(
+        "nav",
+        null,
+        _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("img", { id: "airbnb-logo", src: "../images/airbnb-logo.png", alt: "airbnb logo" })
+        )
+    );
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -488,7 +678,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /***/ }),
-/* 7 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,10 +697,10 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
+var React = __webpack_require__(0);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(3);
-var tracing = __webpack_require__(15);
+var tracing = __webpack_require__(19);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -26755,10 +26945,10 @@ exports.version = ReactVersion;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 8 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26773,7 +26963,7 @@ exports.version = ReactVersion;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(3);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(0),m=__webpack_require__(2),r=__webpack_require__(3);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -27062,7 +27252,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 9 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29400,10 +29590,10 @@ exports.version = ReactVersion;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29433,7 +29623,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29785,10 +29975,10 @@ exports.unstable_wrap = unstable_wrap;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 12 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29804,7 +29994,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 13 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30455,10 +30645,10 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 14 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30485,93 +30675,26 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 15 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(16);
 } else {
-  module.exports = __webpack_require__(11);
+  module.exports = __webpack_require__(15);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 20 */,
+/* 21 */
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = Navbar;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Navbar() {
-    return _react2.default.createElement(
-        "nav",
-        null,
-        _react2.default.createElement(
-            "div",
-            null,
-            _react2.default.createElement("img", { id: "airbnb-logo", src: "../images/airbnb-logo.png", alt: "airbnb logo" })
-        )
-    );
-}
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = Hero;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Hero() {
-    return _react2.default.createElement(
-        "section",
-        { id: "hero" },
-        _react2.default.createElement(
-            "div",
-            { id: "hero--img--container" },
-            _react2.default.createElement("img", { id: "hero--image", src: "../images/photo-grid.png", alt: "photo grid" })
-        ),
-        _react2.default.createElement(
-            "h1",
-            null,
-            "Online Experiences"
-        ),
-        _react2.default.createElement(
-            "h4",
-            null,
-            "Join unique interactive activities led by ",
-            _react2.default.createElement("br", null),
-            "one-of-a-kind hosts\u2014all without leaving ",
-            _react2.default.createElement("br", null),
-            " home."
-        )
-    );
-}
+module.exports = [{"id":1,"name":"Bugee Jumping","image":"./data/images/bungee.jpg","rating":{"score":10,"count":8},"location":"Austrian Alps","price":{"value":110,"currency":"€"}},{"id":2,"name":"Fado Music","image":"../data/images/fado.jpg","rating":{"score":10,"count":11},"location":"Lisbon"},{"id":3,"name":"Wine Drinking","image":"./data/images/france.jpg","rating":{"score":10,"count":4},"location":"Anywhere","price":{"value":110,"currency":"$"}},{"id":4,"name":"Kitesurfing","image":"./data/images/kitesurfing.jpg","rating":{"score":10,"count":4},"location":"In the Water :-)","price":{"value":11011111}},{"id":5,"name":"Hiking","image":"./data/images/norway.jpg","rating":{"score":10,"count":4},"location":"Norway (for example)","price":{"value":88,"currency":"£"}},{"id":6,"name":"Street Strolling","image":"./data/images/rome.jpg","rating":{"score":10,"count":4},"location":"Anywhere in Italy","price":{"value":88,"currency":"€"}},{"id":7,"name":"Basejumping","image":"./data/images/sardinia.jpg","rating":{"score":10,"count":4},"location":"Sardinia","price":{"value":88,"currency":"€"}},{"id":8,"name":"Skiing","image":"./data/images/skiing.jpg","rating":{"score":10,"count":4},"location":"France","price":{"value":88,"currency":"€"}}]
 
 /***/ })
 /******/ ]);
