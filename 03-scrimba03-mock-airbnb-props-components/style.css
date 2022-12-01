@@ -1,10 +1,10 @@
 :root {
-    --darkgrey: #222222;
     --lightgrey: #918E9B;
     --black: #000000;
     --white: #ffffff;
     --magenta: #FE395C;
-    --orange: #FF5A5F;
+    --green: #547f78;
+    --verylightgreen: #def0e2;
 }
 
 * {
@@ -18,16 +18,22 @@ body {
 }
 
 nav {
-    height: 70px;
-    padding: 22px;
+    background-color: var(--green);
+    height: 130px;
+    padding: 11px;
     display: flex;
-    background-color: var(--white);
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-    /* X, Y, Blur raduis, Color */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);   /* X, Y, Blur raduis, Color */
 }
 
-#airbnb-logo {
-    max-width: 107px;
+#fairbnb-logo {
+    max-height: 107px;
+}
+
+#fairbnb-text {
+    margin-left: 107px;
+    font-family: 'Lobster', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /*overwrite*/
+    font-size: 48px;
+    color: var(--verylightgreen);
 }
 
 #hero {
@@ -61,6 +67,7 @@ nav {
 #activities--panel {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
@@ -69,15 +76,15 @@ nav {
     flex-direction: column;
     font-weight: 300;
     font-size: 12px;
-    width: 29.3333%;
-    margin: 2%;
+    width: 400px;
+    margin: 20px;
     padding: 11px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .card--image {
-    margin: 0 auto; /* centered */
+    margin: 0 auto;
+    /* centered */
     height: 350px;
     width: 80%;
     object-fit: cover;
@@ -119,7 +126,7 @@ nav {
 .sep--upper,
 .sep--lower {
     margin: 11px 0;
-    color:var(--lightgrey);
+    color: var(--lightgrey);
 }
 
 .span--location {

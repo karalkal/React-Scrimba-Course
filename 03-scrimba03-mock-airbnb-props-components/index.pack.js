@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,9 +74,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(15);
 } else {
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(14);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -376,9 +376,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(19);
 } else {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(18);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -399,15 +399,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Navbar = __webpack_require__(9);
+var _Navbar = __webpack_require__(10);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
-var _Hero = __webpack_require__(7);
+var _Hero = __webpack_require__(8);
 
 var _Hero2 = _interopRequireDefault(_Hero);
 
-var _Main = __webpack_require__(8);
+var _Main = __webpack_require__(9);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -462,15 +462,21 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(13);
 } else {
-  module.exports = __webpack_require__(11);
+  module.exports = __webpack_require__(12);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports) {
+
+module.exports = [{"id":1,"name":"Bugee Jumping","image":"./data/images/bungee.jpg","rating":{"score":10,"count":8},"location":"Austrian Alps","price":{"value":110,"currency":"€"}},{"id":2,"name":"Fado Music","image":"../data/images/fado.jpg","rating":{"score":10,"count":11},"location":"Lisbon"},{"id":3,"name":"Wine Drinking","image":"./data/images/france.jpg","rating":{"score":10,"count":4},"location":"Anywhere","price":{"value":110,"currency":"$"}},{"id":4,"name":"Kitesurfing","image":"./data/images/kitesurfing.jpg","rating":{"score":10,"count":4},"location":"In the Water :-)","price":{"value":11011111}},{"id":5,"name":"Hiking","image":"./data/images/norway.jpg","rating":{"score":10,"count":4},"location":"Norway (for example)","price":{"value":88,"currency":"£"}},{"id":6,"name":"Street Strolling","image":"./data/images/rome.jpg","rating":{"score":10,"count":4},"location":"Anywhere in Italy","price":{"value":88,"currency":"€"}},{"id":7,"name":"Basejumping","image":"./data/images/sardinia.jpg","rating":{"score":10,"count":4},"location":"Sardinia","price":{"value":88,"currency":"€"}},{"id":8,"name":"Skiing","image":"./data/images/skiing.jpg","rating":{"score":10,"count":4},"location":"France","price":{"value":88,"currency":"€"}}]
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -546,7 +552,7 @@ function Card(props) {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -590,7 +596,7 @@ function Hero() {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -605,13 +611,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Card = __webpack_require__(6);
+var _Card = __webpack_require__(7);
 
 var _Card2 = _interopRequireDefault(_Card);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var activities = __webpack_require__(21);
+var activities = __webpack_require__(6);
 
 function Main() {
     // console.log(activities)
@@ -625,7 +631,7 @@ function Main() {
 }
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -649,13 +655,18 @@ function Navbar() {
         _react2.default.createElement(
             "div",
             null,
-            _react2.default.createElement("img", { id: "airbnb-logo", src: "../images/airbnb-logo.png", alt: "airbnb logo" })
+            _react2.default.createElement("img", { id: "fairbnb-logo", src: "../images/fairbnb-logo.png", alt: "fairbnb logo" }),
+            _react2.default.createElement(
+                "span",
+                { id: "fairbnb-text" },
+                "FairBNB"
+            )
         )
     );
 }
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -678,7 +689,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -700,7 +711,7 @@ if (process.env.NODE_ENV !== "production") {
 var React = __webpack_require__(0);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(3);
-var tracing = __webpack_require__(19);
+var tracing = __webpack_require__(20);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -26948,7 +26959,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27252,7 +27263,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29593,7 +29604,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29623,7 +29634,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29978,7 +29989,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29994,7 +30005,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30648,7 +30659,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30675,26 +30686,19 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(17);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(16);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 20 */,
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = [{"id":1,"name":"Bugee Jumping","image":"./data/images/bungee.jpg","rating":{"score":10,"count":8},"location":"Austrian Alps","price":{"value":110,"currency":"€"}},{"id":2,"name":"Fado Music","image":"../data/images/fado.jpg","rating":{"score":10,"count":11},"location":"Lisbon"},{"id":3,"name":"Wine Drinking","image":"./data/images/france.jpg","rating":{"score":10,"count":4},"location":"Anywhere","price":{"value":110,"currency":"$"}},{"id":4,"name":"Kitesurfing","image":"./data/images/kitesurfing.jpg","rating":{"score":10,"count":4},"location":"In the Water :-)","price":{"value":11011111}},{"id":5,"name":"Hiking","image":"./data/images/norway.jpg","rating":{"score":10,"count":4},"location":"Norway (for example)","price":{"value":88,"currency":"£"}},{"id":6,"name":"Street Strolling","image":"./data/images/rome.jpg","rating":{"score":10,"count":4},"location":"Anywhere in Italy","price":{"value":88,"currency":"€"}},{"id":7,"name":"Basejumping","image":"./data/images/sardinia.jpg","rating":{"score":10,"count":4},"location":"Sardinia","price":{"value":88,"currency":"€"}},{"id":8,"name":"Skiing","image":"./data/images/skiing.jpg","rating":{"score":10,"count":4},"location":"France","price":{"value":88,"currency":"€"}}]
 
 /***/ })
 /******/ ]);
