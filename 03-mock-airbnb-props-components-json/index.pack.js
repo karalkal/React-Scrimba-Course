@@ -619,6 +619,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var activities = __webpack_require__(6);
 
+/*
+export default [
+    {},
+    {}
+import whatever from whereverItIsLocated
+*/
+
 function Main() {
     // console.log(activities)
     return _react2.default.createElement(

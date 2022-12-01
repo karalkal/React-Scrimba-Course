@@ -16,7 +16,7 @@
     {
         "id": 2,
         "name": "Fado Music",
-        "image": "../data/images/fado.jpg",
+        "image": "./data/images/fado.jpg",
         "rating": {
             "score": 10,
             "count": 11
