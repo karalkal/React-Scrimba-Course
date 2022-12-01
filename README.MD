@@ -12,9 +12,9 @@ It goes without saying that the latter is far better than my own creations.
 #### Contents
 
 1. Basic Static page created with React
-2. 
-3. 
-4. 
+2. Solo project (People) displaying cards (no mapping, props etc.)
+3. Basic project endering cards witjh data from Json
+4. Solo project (Travel) displaying cards with mapping, props etc.
 5. 
 6. 
 
