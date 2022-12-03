@@ -9,7 +9,7 @@ export default function Card(props) {
                 <span className="card--location">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>{props.region}</span>
-                    <a href={props.locationURL}>view on Google Maps</a>
+                    <a href={props.locationURL} target="_blank">view on Google Maps</a>
                 </span>
                 <p className="card--name"> {props.name} </p>
                 <p className="card--period"> {props.period.from} - {props.period.to} </p>
