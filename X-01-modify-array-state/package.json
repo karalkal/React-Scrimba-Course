@@ -1,5 +1,5 @@
 {
-  "name": "05-meme-generator",
+  "name": "passing-state-to-component",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
