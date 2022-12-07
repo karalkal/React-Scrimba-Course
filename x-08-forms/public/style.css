@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    background-color: rgb(215, 233, 248);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    margin-bottom: 15px;
+    height: 30px;
+    text-indent: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: block;
+}
+
+textarea {
+    height: 90px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 0.75rem;
+}
