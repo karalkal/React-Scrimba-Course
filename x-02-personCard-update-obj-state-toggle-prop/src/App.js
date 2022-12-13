@@ -1,3 +1,23 @@
+/* Flip Values example with ternary operator
+
+export default function App() {    
+     const [isGoingOut, setisGoingOut] = React.useState(true)
+    
+     function flipValue(){
+         setisGoingOut(isGoingOut => !isGoingOut)        
+     }
+     
+     return (
+         <div>
+             <h1>Do I feel like going out tonight?</h1>
+             <div onClick={flipValue}>
+                <h1> {isGoingOut === true ? "Yes": "No"} </h1>
+             </div>
+         </div>
+     )
+ } 
+*/
+
 import React from "react"
 
 export default function App() {
