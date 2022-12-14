@@ -13,9 +13,10 @@ export default function Main() {
     /**
     If we fetch data directly, it will change the state of allMemes, therefore React will re-render the component.
     Then it will reach/call fetch again, update state, then rerender component, reach fetch... - infinite loop.
-    useEffect takes a function as its parameter. If that function
-    returns something, it needs to be a cleanup function. Otherwise,
-    it should return nothing.
+    useEffect takes a function as its parameter. If that function returns something, it needs to be a cleanup function. 
+    Otherwise it should return nothing. 
+    Dependancy array will check if state of variable has changed, if not it will not run the function(first param).
+    If the array is left empty, function will run only once
     */
 
     useEffect(() => {
