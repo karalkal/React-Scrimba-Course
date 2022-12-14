@@ -11,6 +11,8 @@ export default function Main() {
     const [allMemes, setAllMemes] = useState()
 
     /**
+    If we fetch data directly, it will change the state of allMemes, therefore React will re-render the component.
+    Then it will reach/call fetch again, update state, then rerender component, reach fetch... - infinite loop.
     useEffect takes a function as its parameter. If that function
     returns something, it needs to be a cleanup function. Otherwise,
     it should return nothing.
