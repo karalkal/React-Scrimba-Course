@@ -1,11 +1,22 @@
+import React from "react";
+import Welcome from "./Welcome";
+import Quizz from "./Quizz";
+
 function App() {
+  const [welcomeDisplayed, setWelcomeDisplayed] = React.useState(true)
+  function toggleScreen() {
+    setWelcomeDisplayed(prevScreen => !prevScreen)
+    console.log(welcomeDisplayed)
+  }
+
   return (
-      <div className="flex-container">
-        <h1 >Quizzical</h1>
-        <h2> Test your knowledge</h2>
-        <button >Start quiz</button>
-      </div>
+    <div>
+      {welcomeDisplayed
+        ? <Welcome handleClick={toggleScreen} />
+        : <Quizz handleClick={toggleScreen} />}
+    </div>
   );
 }
+
 
 export default App;
