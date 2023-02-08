@@ -5,10 +5,10 @@
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: whitesmoke;
 }
 
-.flex-container {
+.flex-container--welcome {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,26 +23,21 @@ body {
   text-align: center;
 }
 
-h1 {
+#h1--welcome {
   font-family: 'Karla', sans-serif;
   font-weight: 700;
   font-size: 31px;
-
   color: #293264;
-
   width: 412px;
   height: 41px;
 }
 
-h2 {
+#h2--welcome {
   color: #293264;
-
   font-weight: 400;
   font-size: 16px;
-
   width: 318px;
   height: 19px;
-
   margin-top: 7px;
 }
 
@@ -60,8 +55,52 @@ button {
   margin-top: 29px;
 
   border: none;
+}
 
 
+.flex-container--q-and-a {
+  width: 80%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
+.q-and-a--div {
+  
+}
+
+.question {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #293264;
+  text-align: left;
+}
+
+.answers--div {
+  margin: 15px 0;
+}
+
+.answer--span {
+  display: inline-block;
+  /* background-color: #D6DBF5; */
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #293264;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-right: 15px;
+  margin-right: 15px;
+}
+
+.answer--span:last-child {
+  margin-right: 0;
+}
+
+hr {
+  margin: 26px 0;
+  border-top: 1px solid #DBDEF0;
 }

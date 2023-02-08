@@ -2,16 +2,17 @@ import React from "react";
 import Welcome from "./Welcome";
 import Quizz from "./Quizz";
 
+
 function App() {
-  const [welcomeDisplayed, setWelcomeDisplayed] = React.useState(true)
+  const [startScreen, setStartScreen] = React.useState(true)
+
   function toggleScreen() {
-    setWelcomeDisplayed(prevScreen => !prevScreen)
-    console.log(welcomeDisplayed)
+    setStartScreen(prevScreen => !prevScreen)
   }
 
   return (
     <div>
-      {welcomeDisplayed
+      {startScreen
         ? <Welcome handleClick={toggleScreen} />
         : <Quizz handleClick={toggleScreen} />}
     </div>
