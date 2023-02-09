@@ -29,6 +29,7 @@ export default function Quizz(props) {
                 <button onClick={props.handleClick}>Restart app</button>
             </div>
         )
+        
 
     }
 }

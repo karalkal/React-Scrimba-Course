@@ -1,37 +1,80 @@
-import React from "react"
+import { useState, useEffect } from "react"
 import { decode } from 'html-entities';
+import { nanoid } from "nanoid"
+
 
 export default function Question(props) {
-
     let question = decode(props.q.question)
 
-    // let question = props.q.question
     let correctAnswer = props.q.correct_answer
     let incorrectAnswers = props.q.incorrect_answers
-    let shuffledAnswers = shuffle(correctAnswer, incorrectAnswers)
+    let initialAnswersArr = shuffle(correctAnswer, incorrectAnswers)
+    let [answers, setAnswers] = useState(initialAnswersArr)
+    //shuffle not only shuffles answers but attaches isSelected and isCorrect attributes
+
 
     return (
-        <div className="q-and-a--div">
+        <div>
             <h2 className="question">{question}</h2>
-            <div className="answers--div"> {shuffledAnswers.map(answer =>
-                (<span className="answer--span">{answer}</span>)
-            )}
+            <div className="answers--div">
+
+                {answers.map(answer =>
+                    <span
+                        onClick={() => selectAnswer(answer.id)}
+                        className={answer.isSelected
+                            ? "answer--span selected"
+                            : "answer--span not--selected"}
+                    >
+                        {decode(answer.text)}
+                    </span>
+                )}
+
             </div>
             <hr />
-            {/* <button onClick={props.handleClick}>Start quiz</button> */}
         </div>
-    )    
+    )
+
+    function selectAnswer(selectedIndex) {
+        setAnswers(prevArr => prevArr.map(answer => {
+            return answer.id === selectedIndex
+                ? {
+                    ...answer,
+                    isSelected: true
+                }
+                : {
+                    ...answer,
+                    isSelected: false
+                }
+        }))
+    }
 }
 
-function shuffle(correctAnswer, incorrectAnswers) {
-    let answers = [correctAnswer, ...incorrectAnswers]
-    // console.log("PRE-shuffle", answers)
-    for (let i = answers.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = answers[i];
-        answers[i] = answers[j];
-        answers[j] = temp;
+
+function shuffle(correctAnswerText, incorrectAnswersTexts) {
+
+    let answersAsObjects = []
+
+    let correctAnswer = {
+        text: correctAnswerText,
+        isSelected: false,
+        isCorrect: true,
+        id: nanoid()
     }
-    // console.log("POST-shuffle", answers)
-    return answers
+    answersAsObjects.push(correctAnswer)
+    
+    for (let a of incorrectAnswersTexts) {
+        let answerObj = {
+            text: a,
+            isSelected: false,
+            isCorrect: false,
+            id: nanoid()
+        }
+        answersAsObjects.push(answerObj)
+    }
+    for (let i = answersAsObjects.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [answersAsObjects[i], answersAsObjects[j]] = [answersAsObjects[j], answersAsObjects[i]];
+    }
+
+    return answersAsObjects
 }
