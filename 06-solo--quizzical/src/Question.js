@@ -10,8 +10,7 @@ export default function Question(props) {
     let incorrectAnswers = props.q.incorrect_answers
     let initialAnswersArr = shuffle(correctAnswer, incorrectAnswers)
     let [answers, setAnswers] = useState(initialAnswersArr)
-    //shuffle not only shuffles answers but attaches isSelected and isCorrect attributes
-
+    //shuffle func creates answer objects with text and attaches isSelected and isCorrect properties
 
     return (
         <div>
@@ -39,7 +38,7 @@ export default function Question(props) {
             return answer.id === selectedIndex
                 ? {
                     ...answer,
-                    isSelected: true
+                    isSelected: true,
                 }
                 : {
                     ...answer,
@@ -55,19 +54,19 @@ function shuffle(correctAnswerText, incorrectAnswersTexts) {
     let answersAsObjects = []
 
     let correctAnswer = {
+        id: nanoid(),
         text: correctAnswerText,
         isSelected: false,
         isCorrect: true,
-        id: nanoid()
     }
     answersAsObjects.push(correctAnswer)
-    
+
     for (let a of incorrectAnswersTexts) {
         let answerObj = {
+            id: nanoid(),
             text: a,
             isSelected: false,
             isCorrect: false,
-            id: nanoid()
         }
         answersAsObjects.push(answerObj)
     }

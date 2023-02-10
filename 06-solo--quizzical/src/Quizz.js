@@ -26,9 +26,15 @@ export default function Quizz(props) {
         return (
             <div className="flex-container--q-and-a">
                 {questionElements}
+                <button onClick={checkAnswers}>Check answers</button>
                 <button onClick={props.handleClick}>Restart app</button>
             </div>
         )
+
+        function checkAnswers() {
+            let score = 0
+            console.log(questions)
+        }
         
 
     }

@@ -23,6 +23,27 @@ export default function App(props) {
         
                     return updatedSquares
                 })
+                
+                OR 
+                
+        function toggle(id) {
+            setSquares(prevSqArr => {
+                let clickedItemIndex = squares.indexOf(squares.find(sq => sq.id === id))
+                let itemToUpdate = squares[clickedItemIndex]
+                let updatedItem = {
+                    ...itemToUpdate,
+                    on: !itemToUpdate.on
+                }
+
+                return [
+                    ...prevSqArr.slice(0, clickedItemIndex),
+                    updatedItem,
+                    ...prevSqArr.slice(clickedItemIndex + 1)
+                ]
+            })
+        }
+                
+                
         */
 
         // THE REAL ONE
