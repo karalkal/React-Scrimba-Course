@@ -14,6 +14,20 @@ export default function Form() {
     )
     console.log(formData)
 
+    /* NB using computed properties -> whatever 'name' is the value of relevant key will be overwritten,
+    e.g.<input name="firstName"> will overwrite firstName in our formData object
+    MUST match a property name from the formData state, then we get access to event.target.name:
+    
+    function handleChange(event) {
+       setFormData(prevFormData => {
+           return {
+               ...prevFormData,
+               [event.target.name]: event.target.value
+           }
+       })
+   }
+   */
+
     function handleChange(event) {
         console.log(event.target)
 
@@ -63,7 +77,7 @@ export default function Form() {
                 value={formData.email}
             />
             <textarea
-                placeholder="Comments"
+                placeholder="Comments"      // in React textarea does not have closing tag </textarea>
                 onChange={handleChange}
                 name="comments"
                 value={formData.comments}
@@ -77,7 +91,7 @@ export default function Form() {
                 onChange={handleChange}
                 name="isFriendly"
             />
-            {/* htmlFor is just the "for" html attribute which corresponds to the id of the input*/}
+            {/* htmlFor is just the "for" html attribute which corresponds to the !!!ID!!! of the input*/}
             <label htmlFor="isFriendly">Are you friendly?</label>
             <br />
             <br />

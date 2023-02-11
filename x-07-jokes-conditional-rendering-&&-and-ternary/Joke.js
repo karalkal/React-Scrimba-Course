@@ -30,6 +30,30 @@ export default function App() {
         </div>
     )
 }
-// this might be more readable: 
-// <h1>You have {messages.length} unread message{messages.length > 1 && "s"}</h1>
+
+OR
+
+<h1>You have {messages.length} unread message{messages.length > 1 && "s"}</h1>
+
+OR
+
+            <div>
+                {messages.length === 0
+                    ?
+                    <h1>You're all caught up!</h1>
+                    :
+                    <h1>You have {messages.length} unread
+                {messages.length > 1 ? " messages" : " message"}</h1>
+                }
+            </div>
+            
+OR 
+
+            <div>
+                <h2>
+                    {messages.length === 0
+                        ? "You're all caught up!"
+                        : `You have ${messages.length} unread message${messages.length === 1 ? "" : "s"}`}
+                </h2>
+            </div>
 */
