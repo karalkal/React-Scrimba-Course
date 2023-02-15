@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react"
 import { decode } from 'html-entities';
-import { nanoid } from "nanoid"
 
 
 export default function Question(props) {
     let question = decode(props.q.question)
 
-    let correctAnswer = props.q.correct_answer
-    let incorrectAnswers = props.q.incorrect_answers
-    let initialAnswersArr = shuffle(correctAnswer, incorrectAnswers)
-    let [answers, setAnswers] = useState(initialAnswersArr)
+    // let correctAnswer = props.q.correct_answer
+    // let incorrectAnswers = props.q.incorrect_answers
+    // let initialAnswersArr = shuffle(correctAnswer, incorrectAnswers)
+    // let [answers, setAnswers] = useState(initialAnswersArr)
     //shuffle func creates answer objects with text and attaches isSelected and isCorrect properties
 
+    /*
     return (
         <div>
             <h2 className="question">{question}</h2>
@@ -32,7 +31,10 @@ export default function Question(props) {
             <hr />
         </div>
     )
+*/
 
+
+/*
     function selectAnswer(selectedIndex) {
         setAnswers(prevArr => prevArr.map(answer => {
             return answer.id === selectedIndex
@@ -47,8 +49,10 @@ export default function Question(props) {
         }))
     }
 }
+*/
 
 
+/*
 function shuffle(correctAnswerText, incorrectAnswersTexts) {
 
     let answersAsObjects = []
@@ -76,4 +80,5 @@ function shuffle(correctAnswerText, incorrectAnswersTexts) {
     }
 
     return answersAsObjects
+    */
 }
