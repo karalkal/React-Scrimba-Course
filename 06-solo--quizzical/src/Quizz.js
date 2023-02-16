@@ -17,83 +17,93 @@ export default function Quizz(props) {
     }, [])
 
 
-
     function generateQuestionsArr(data) {
         let questionsArr = []
 
         for (let q of data) {
-            console.log("Question is:", q.question, "\nCorrect answer is:", q.correct_answer, "\nIncorrect answer are:", q.incorrect_answers)
+            // console.log("Question is:", q.question, "\nCorrect answer is:", q.correct_answer, "\nIncorrect answer are:", q.incorrect_answers)
 
             /** create answers Array for each question. 
                 Shuffle func creates answer objects with decoded text,
                 attaches isSelected and isCorrect properties, returns arr of answers */
             let answersArr = shuffleAnswers(q.correct_answer, q.incorrect_answers)
-            console.log(answersArr)
+            // console.log("Shuffled answers:", answersArr)
 
             questionsArr.push(
                 {
                     id: nanoid(),
-                    text: decode(q.question)
-
+                    text: decode(q.question),
+                    answersArr: answersArr,
                 }
             )
         }
-
-        setQuestions(data)
+        // NB Set questions state with the newly created array, not the data from API! 
+        setQuestions(questionsArr)
     }
+/*
+    function selectAnswer(answerID) {
+        console.log("State before selection:", questions)
+        setDices(prevArr => prevArr.map(q => {
+            return q.id === id
+                ? {
+                    ...dice,
+                    isHeld: !dice.isHeld  // flip value
+                }
+                : qu
+        }))
+    }
+        onClick = {() => selectAnswer(answer.id)
+    }
+}
+*/
 
-    function shuffleAnswers(correctAnswerText, incorrectAnswersTexts) {
 
-        let answersAsObjects = []
+function shuffleAnswers(correctAnswerText, incorrectAnswersTexts) {
 
-        let correctAnswer = {
+    let answersAsObjects = []
+
+    let correctAnswer = {
+        id: nanoid(),
+        text: decode(correctAnswerText),        // decode removes html entities chars
+        isSelected: false,
+        isCorrect: true,
+    }
+    answersAsObjects.push(correctAnswer)
+
+    for (let a of incorrectAnswersTexts) {
+        let answerObj = {
             id: nanoid(),
-            text: decode(correctAnswerText),        // decode removes html entities chars
+            text: decode(a),
             isSelected: false,
-            isCorrect: true,
+            isCorrect: false,
         }
-        answersAsObjects.push(correctAnswer)
+        answersAsObjects.push(answerObj)
+    }
+    for (let i = answersAsObjects.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [answersAsObjects[i], answersAsObjects[j]] = [answersAsObjects[j], answersAsObjects[i]];
+    }
 
-        for (let a of incorrectAnswersTexts) {
-            let answerObj = {
-                id: nanoid(),
-                text: decode(a),
-                isSelected: false,
-                isCorrect: false,
-            }
-            answersAsObjects.push(answerObj)
-        }
-        for (let i = answersAsObjects.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            [answersAsObjects[i], answersAsObjects[j]] = [answersAsObjects[j], answersAsObjects[i]];
-        }
+    return answersAsObjects
+}
 
-        return answersAsObjects
+
+if (questions) {
+    const questionElements = questions.map(q => <Question question={q} key={q.id} />)
+
+    return (
+        <div className="flex-container--q-and-a">
+            {questionElements}
+            <button onClick={checkAnswers}>Check answers</button>
+            <button onClick={props.handleClick}>Restart app</button>
+        </div>
+    )
+
+    function checkAnswers() {
+        let score = 0
+        console.log(questions)
     }
 
 
-    if (questions) {
-        const questionElements = questions.map(q =>
-            <Question
-                q={q}
-                key={nanoid()}
-                id={nanoid()}
-            />
-        )
-
-        return (
-            <div className="flex-container--q-and-a">
-                {questionElements}
-                <button onClick={checkAnswers}>Check answers</button>
-                <button onClick={props.handleClick}>Restart app</button>
-            </div>
-        )
-
-        function checkAnswers() {
-            let score = 0
-            console.log(questions)
-        }
-
-
-    }
+}
 }
