@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
 
 export default function Question(props) {
@@ -6,7 +6,7 @@ export default function Question(props) {
 
     // console.log("Question is:", questionData.text, "\nAnswer Array", questionData.answersArr)
 
-        let [answers, setAnswers] = useState(questionData.answersArr)
+    let [answers, setAnswers] = useState(questionData.answersArr)
 
     return (
         <div>
@@ -43,6 +43,4 @@ export default function Question(props) {
                 }
         }))
     }
-
-
 }
