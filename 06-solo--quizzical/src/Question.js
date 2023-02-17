@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 export default function Question(props) {
     const questionData = props.question
-
-    // console.log("Question is:", questionData.text, "\nAnswer Array", questionData.answersArr)
+    // console.log(props.key)
 
     let [answers, setAnswers] = useState(questionData.answersArr)
 
@@ -15,6 +14,7 @@ export default function Question(props) {
 
                 {answers.map(answer =>
                     <span
+                        key={answer.id}
                         onClick={() => selectAnswer(answer.id)}
                         className={answer.isSelected
                             ? "answer--span selected"

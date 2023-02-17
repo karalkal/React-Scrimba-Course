@@ -101,6 +101,9 @@ export default function Quizz(props) {
 
 
     if (questions) {
+        console.log(questions[0])
+
+
         const questionElements = questions.map(q => <Question question={q} key={q.id} />)
 
         return (
