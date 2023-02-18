@@ -9,14 +9,15 @@ export default function Result(props) {
                 {answers.map(answer => {
                     const cssClasses = {
                         answerSpan: "answer--span",
-                        selected: answer.isSelected ? "selected" : "not--selected",
-                        correct: answer.isCorrect ? "correct" : "incorrect",
+                        selectedIncorrect: answer.isSelected && !answer.isCorrect && "incorrect",
+                        correct: answer.isCorrect && "correct",
+                        // selectedCorrect:  answer.isSelected && answer.isCorrect && "correct",
                     }
                     return (
 
                         <span
                             key={answer.id}
-                            className={`${cssClasses.answerSpan} ${cssClasses.selected} ${cssClasses.correct}`}
+                            className={`${cssClasses.answerSpan} ${cssClasses.selectedIncorrect}  ${cssClasses.correct} ${cssClasses.selectedCorrect}`}
                         >
                             {answer.text}
                         </span>)

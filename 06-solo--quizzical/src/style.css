@@ -94,19 +94,23 @@ button {
 }
 
 .selected {
-  background-color: #D6DBF5;
+  background-color: black;
+  color: white;
 }
 
 .not--selected {
   background-color: none;
-}
-
-.correct {
-  background-color: blueviolet;
+  color: black;
 }
 
 .incorrect {
   background-color: lightpink;
+  color: black;
+}
+
+.correct {
+  background-color: greenyellow;
+  color: black;
 }
 
 .answer--span:last-child {
