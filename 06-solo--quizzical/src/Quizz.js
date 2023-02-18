@@ -118,7 +118,7 @@ export default function Quizz(props) {
             for (let q of questions) {
                 let correctAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isCorrect))
                 let givenAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isSelected))
-                if (correctAnswerIndex, givenAnswerIndex) {
+                if (correctAnswerIndex === givenAnswerIndex) {
                     score++
                 }
             }
