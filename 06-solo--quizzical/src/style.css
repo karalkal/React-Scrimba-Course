@@ -101,6 +101,14 @@ button {
   background-color: none;
 }
 
+.correct {
+  background-color: blueviolet;
+}
+
+.incorrect {
+  background-color: lightpink;
+}
+
 .answer--span:last-child {
   margin-right: 0;
 }

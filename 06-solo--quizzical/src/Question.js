@@ -35,20 +35,4 @@ export default function Question(props) {
             <hr />
         </div>
     )
-
-    /*
-        function selectAnswer(selectedIndex) {
-            setAnswers(prevArr => prevArr.map(answer => {
-                return answer.id === selectedIndex
-                    ? {
-                        ...answer,
-                        isSelected: true,
-                    }
-                    : {
-                        ...answer,
-                        isSelected: false
-                    }
-            }))
-        }
-        */
 }

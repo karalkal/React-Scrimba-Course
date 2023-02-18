@@ -3,11 +3,14 @@ import { nanoid } from "nanoid"
 import { decode } from 'html-entities'; // replaces html entities chars
 
 import Question from "./Question"
+import Result from "./Result"
 
 
 export default function Quizz(props) {
 
     const [questions, setQuestions] = useState()
+    const [hasSubmitted, setHasSubmitted] = useState(false)
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
         fetch("https://opentdb.com/api.php?amount=5")
@@ -96,37 +99,54 @@ export default function Quizz(props) {
         }))
     }
 
-
+    // ... AND finally - render page
     if (questions) {
-        const questionElements = questions.map(q =>
-            <Question
-                question={q}
-                key={q.id}
-                selectAnswer={selectAnswer} />) // will get back question and answer IDs
 
-        return (
-            <div className="flex-container--q-and-a">
-                {questionElements}
-                <button onClick={checkAnswers}>Check answers</button>
-                <button onClick={props.handleClick}>Restart app</button>
-            </div>
-        )
+        // If rendering QUIZ
+        if (!hasSubmitted) {
+            const questionElements = questions.map(q =>
+                <Question
+                    question={q}
+                    key={q.id}
+                    selectAnswer={selectAnswer} />) // will get back question and answer IDs
 
-        function checkAnswers() {
-            let score = 0
-
-            for (let q of questions) {
-                let correctAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isCorrect))
-                let givenAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isSelected))
-                if (correctAnswerIndex === givenAnswerIndex) {
-                    score++
-                }
-            }
-
-            console.log("Yourscore: ", score)
-
+            return (
+                <div className="flex-container--q-and-a">
+                    {questionElements}
+                    <button onClick={checkAnswers}>Check answers</button>
+                    <button onClick={props.handleClick}>Restart app</button>
+                </div>
+            )
         }
 
+        // If rendering RESULTS
+        else {
+            const questionElements = questions.map(q =>
+                <Result
+                    score={score}
+                    question={q}
+                    key={q.id} />)
 
+            return (
+                <div className="flex-container--q-and-a">
+                    {questionElements}
+                    <button onClick={props.handleClick}>Restart app</button>
+                </div>
+            )
+        }
+    }
+
+    // This function will change state of hasSubmitted, therefore will cause rerendering, 
+    // then if hasSubmitted == true will go to results page, not very elegant
+    function checkAnswers() {
+        setHasSubmitted(true)
+        for (let q of questions) {
+            let correctAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isCorrect))
+            let givenAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isSelected))
+            if (correctAnswerIndex === givenAnswerIndex) {
+                setScore(prevValue => prevValue + 1)
+            }
+        }
+        return score
     }
 }
