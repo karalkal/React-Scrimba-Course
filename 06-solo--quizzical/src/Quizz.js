@@ -31,29 +31,14 @@ export default function Quizz(props) {
                     id: nanoid(),
                     text: decode(q.question),
                     answersArr: answersArr,
+                    isAnswered: false
                 }
             )
         }
         // N.B. Set questions state with the newly created array, not the data from API! 
         setQuestions(questionsArr)
     }
-    /*
-        function selectAnswer(answerID) {
-            console.log("State before selection:", questions)
-            setDices(prevArr => prevArr.map(q => {
-                return q.id === id
-                    ? {
-                        ...dice,
-                        isHeld: !dice.isHeld  // flip value
-                    }
-                    : qu
-            }))
-        }
-            onClick = {() => selectAnswer(answer.id)
-        }
-    }
-    */
-
+    
 
     function shuffleAnswers(correctAnswerText, incorrectAnswersTexts) {
         let answersAsObjects = []
@@ -83,28 +68,26 @@ export default function Quizz(props) {
         return answersAsObjects
     }
 
-    /*
-        function selectAnswer(selectedIndex) {
-            setAnswers(prevArr => prevArr.map(answer => {
-                return answer.id === selectedIndex
-                    ? {
-                        ...answer,
-                        isSelected: true,
-                    }
-                    : {
-                        ...answer,
-                        isSelected: false
-                    }
-            }))
-        }
-    */
+
+    function selectAnswer(questionID, answerID) {
+        console.log(questionID, answerID)
+
+        setQuestions(prevArr => prevArr.map(question => {
+            return question.id === questionID
+                ? {
+                    ...question
+                }
+                : question
+        }))
+    }
 
 
     if (questions) {
-        console.log(questions[0])
-
-
-        const questionElements = questions.map(q => <Question question={q} key={q.id} />)
+        const questionElements = questions.map(q =>
+            <Question
+                question={q}
+                key={q.id} 
+                selectAnswer={selectAnswer}/>) // will get back question and answer IDs
 
         return (
             <div className="flex-container--q-and-a">
