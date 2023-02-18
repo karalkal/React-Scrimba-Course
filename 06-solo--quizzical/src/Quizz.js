@@ -38,7 +38,7 @@ export default function Quizz(props) {
         // N.B. Set questions state with the newly created array, not the data from API! 
         setQuestions(questionsArr)
     }
-    
+
 
     function shuffleAnswers(correctAnswerText, incorrectAnswersTexts) {
         let answersAsObjects = []
@@ -70,14 +70,29 @@ export default function Quizz(props) {
 
 
     function selectAnswer(questionID, answerID) {
-        console.log(questionID, answerID)
 
         setQuestions(prevArr => prevArr.map(question => {
-            return question.id === questionID
-                ? {
-                    ...question
+            if (question.id !== questionID) { // if not the selected question
+                return question
+            } else {
+                let newAnswersArr = question.answersArr.map(answer =>
+                    answer.id === answerID
+                        ? {
+                            ...answer,
+                            isSelected: true
+                        }
+                        : {
+                            ...answer,
+                            isSelected: false
+                        }
+                )
+
+                return {
+                    ...question,
+                    answersArr: newAnswersArr,
+                    isAnswered: true
                 }
-                : question
+            }
         }))
     }
 
@@ -86,8 +101,8 @@ export default function Quizz(props) {
         const questionElements = questions.map(q =>
             <Question
                 question={q}
-                key={q.id} 
-                selectAnswer={selectAnswer}/>) // will get back question and answer IDs
+                key={q.id}
+                selectAnswer={selectAnswer} />) // will get back question and answer IDs
 
         return (
             <div className="flex-container--q-and-a">
@@ -99,7 +114,17 @@ export default function Quizz(props) {
 
         function checkAnswers() {
             let score = 0
-            console.log(questions)
+
+            for (let q of questions) {
+                let correctAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isCorrect))
+                let givenAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isSelected))
+                if (correctAnswerIndex, givenAnswerIndex) {
+                    score++
+                }
+            }
+
+            console.log("Yourscore: ", score)
+
         }
 
 
