@@ -2,7 +2,7 @@ export default function Result(props) {
     let answers = props.question.answersArr
 
     return (
-        <div>
+        <div className="container--question--plus--answers">
             <h2 className="question">{props.question.text}</h2>
             <div className="answers--div">
 
@@ -16,7 +16,7 @@ export default function Result(props) {
                     return (
 
                         <span
-                            style={{cursor: "default"}}
+                            style={{ cursor: "default" }}
                             key={answer.id}
                             className={`${cssClasses.answerSpan} ${cssClasses.incorrectSelected}  ${cssClasses.correctNotSelected} ${cssClasses.correctSelected}`}
                         >

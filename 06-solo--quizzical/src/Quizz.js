@@ -7,13 +7,13 @@ import Result from "./Result"
 
 
 export default function Quizz(props) {
-
+    
     const [questions, setQuestions] = useState()
     const [hasSubmitted, setHasSubmitted] = useState(false)
     const [score, setScore] = useState(0)
 
     useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=5")
+        fetch(`https://opentdb.com/api.php?amount=10&category=${props.categorySelected}`)
             .then(response => response.json())
             .then(data => generateQuestionsArr(data.results))
     }, [])
@@ -115,7 +115,7 @@ export default function Quizz(props) {
                     {questionElements}
                     <div className="btn--and--result">
                         <button onClick={checkAnswers}>Check answers</button>
-                        <button onClick={props.handleClick}>Restart app</button>
+                        {/* <button onClick={() => props.handleClick()}>Restart app</button> */}
                     </div>
                 </div>
             )

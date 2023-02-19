@@ -2,7 +2,7 @@ export default function Question(props) {
     let answers = props.question.answersArr
 
     return (
-        <div>
+        <div className="container--question--plus--answers">
             <h2 className="question">{props.question.text}</h2>
             <div className="answers--div">
 
