@@ -4,22 +4,22 @@ import React from "react"
 export default function Welcome(props) {
 
     const categories = [
-        ["General", 9],
-        ["Books", 10],
-        ["Film", 11],
-        ["Music", 12],
-        ["Science/Nature", 17],
-        ["Science/Computers", 18],
-        ["Science/Maths", 19],
-        ["Science/Gadgets", 30],
-        ["Mythology", 20],
-        ["Sports", 21],
-        ["Geography", 22],
-        ["History", 23],
-        ["Politics", 24],
-        ["Art", 25],
-        ["Animals", 27],
-        ["Vehicles", 28],
+        ["General", "fa-solid fa-shuffle", 9],
+        ["Books", "fa-solid fa-book", 10],
+        ["Film", "fa-solid fa-film", 11],
+        ["Music", "fa-solid fa-music", 12],
+        ["Science/Nature", "fa-solid fa-tree", 17],
+        ["Science/Computers", "fa-solid fa-laptop", 18],
+        ["Science/Maths", "fa-solid fa-plus-minus", 19],
+        ["Science/Gadgets", "fa-solid fa-headphones", 30],
+        ["Mythology", "fa-solid fa-mars-and-venus", 20],
+        ["Sports", "fa-solid fa-futbol", 21],
+        ["Geography", "fa-solid fa-globe", 22],
+        ["History", "fa-solid fa-ankh", 23],
+        ["Politics", "fa-solid fa-landmark", 24],
+        ["Art", "fa-solid fa-palette", 25],
+        ["Animals", "fa-solid fa-hippo", 27],
+        ["Vehicles", "fa-solid fa-car-side", 28],
 
     ]
 
@@ -30,7 +30,13 @@ export default function Welcome(props) {
 
             <div id="categories--container">
                 {categories.map(cat =>
-                    <button key={cat[1]} onClick={() => props.handleClick(cat[1])}>{cat[0]}</button>
+                    <button
+                        class="category--buttons"
+                        key={cat[1]}
+                        onClick={() => props.handleClick(cat[2])}>
+                        <i class={cat[1]}></i>
+                        {cat[0]}
+                    </button>
                 )}
             </div>
 

@@ -57,16 +57,27 @@ button,
   color: #F5F7FB;
   font-weight: 500;
   font-size: 16px;
-  width: 193px;
+  width: 200px;
   height: 52px;
   border-radius: 15px;
   margin-top: 29px;
-  margin-right:29px;
+  margin-right: 29px;
   border: none;
 }
 
 button {
   cursor: pointer;
+}
+
+.category--buttons {
+  width: 220px;
+  text-align: left;
+}
+
+.category--buttons>i {
+  margin: 0 11px;
+  font-size: 1.7em;
+  vertical-align: text-bottom;
 }
 
 #result {
