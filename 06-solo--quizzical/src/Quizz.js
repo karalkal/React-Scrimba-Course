@@ -7,13 +7,17 @@ import Result from "./Result"
 
 
 export default function Quizz(props) {
-    
+
     const [questions, setQuestions] = useState()
     const [hasSubmitted, setHasSubmitted] = useState(false)
     const [score, setScore] = useState(0)
 
+    console.log(props)
+
+    const [catName, catIcon, catID] = props.categorySelected  // Array containing name, icon, id
+
     useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=10&category=${props.categorySelected}`)
+        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}`)
             .then(response => response.json())
             .then(data => generateQuestionsArr(data.results))
     }, [])

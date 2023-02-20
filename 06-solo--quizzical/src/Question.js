@@ -30,7 +30,6 @@ export default function Question(props) {
                         </span>)
                 }
                 )}
-
             </div>
             <hr />
         </div>

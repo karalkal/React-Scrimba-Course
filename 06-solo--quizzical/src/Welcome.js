@@ -24,20 +24,32 @@ export default function Welcome(props) {
 
     return (
         <div className="welcome--container--flex">
-            <h1 id="h1--welcome" >Quizzical</h1>
-            <h2 id="h2--welcome"> Test your knowledge</h2>
+            <h1 id="h1--welcome" >Quick Quiz</h1>
+            <h2 id="h2--welcome">Test your knowledge</h2>
 
             <div id="categories--container">
-                {categories.map(cat =>
-                    <button
+                {categories.map(cat => {
+                    const [catName, catIcon, catID] = cat
+                    return (<button
                         className="category--buttons"
                         key={cat[1]}
-                        onClick={() => props.handleClick(cat[2])}>
-                        <i className={cat[1]}></i>
-                        {cat[0]}
-                    </button>
+                        onClick={() => props.handleClick(cat)}>
+                        <i className={catIcon}></i>
+                        {catName}
+                    </button>)
+                }
                 )}
+
+                <div className="slidecontainer">
+                    <p>Custom range slider:</p>
+                    <input type="range" min="1" max="100" value="50" className="slider" id="myRange" />
+                </div>
+
             </div>
+
+
+
+
 
         </div>
     )
