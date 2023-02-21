@@ -15,9 +15,9 @@ export default function Welcome(props) {
         ["Maths", "fa-solid fa-plus-minus", 19],
         ["Gadgets", "fa-solid fa-headphones", 30],
         ["Mythology", "fa-solid fa-mars-and-venus", 20],
-        ["Sports", "fa-solid fa-futbol", 21],
+        ["Sports", "fa-brands fa-dribbble", 21],
         ["Geography", "fa-solid fa-globe", 22],
-        ["History", "fa-solid fa-ankh", 23],
+        ["History", "fa-solid fa-clock-rotate-left", 23],
         ["Politics", "fa-solid fa-landmark", 24],
         ["Art", "fa-solid fa-palette", 25],
         ["Animals", "fa-solid fa-hippo", 27],
@@ -65,7 +65,7 @@ export default function Welcome(props) {
                 </div>
             </div>
 
-            <button onClick={() => props.handleClick(categorySelected)}>
+            <button id="goBtn"onClick={() => props.handleClick(categorySelected)}>
                 GO!
             </button>
         </div>

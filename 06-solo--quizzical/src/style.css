@@ -9,7 +9,6 @@
   --rust: #bb3e03ff;
   --rufous: #ae2012ff;
   --auburn: #9b2226ff;
-
   /*
 --rich-black: hsla(197, 100%, 5%, 1);
 --midnight-green: hsla(190, 100%, 23%, 1);
@@ -22,9 +21,7 @@
 --rufous: hsla(5, 81%, 38%, 1);
 --auburn: hsla(358, 64%, 37%, 1);
 */
-
 }
-
 
 /* 
 font-family: 'Bungee', cursive;
@@ -81,7 +78,8 @@ body {
   gap: 22px;
 }
 
-#button,
+button#checkAnswers,
+button#restartBtn,
 #result {
   background-color: var(--midnight-green);
   color: var(--vanilla);
@@ -96,7 +94,6 @@ button {
   border: none;
   border-radius: 15px;
 }
-
 
 /* Welcome */
 
@@ -138,7 +135,6 @@ button {
   text-transform: uppercase;
   text-align: left;
   font-size: 22px;
-  width: 310px;
   height: 62px;
   -webkit-transition: background-image .4s ease-in-out;
   transition: background-image .4s ease-in-out;
@@ -229,6 +225,17 @@ button {
 #type--true--false {}
 
 #type--multichoice {}
+
+#goBtn {
+  width: 110px;
+  height: 110px;
+  margin-top: 44px;
+  font-size: 2.2em;
+  font-family: 'Bungee', cursive;
+  border-radius: 100%;
+  background-color: var(--midnight-green);
+  color: var(--vanilla);
+  }
 
 
 

@@ -14,7 +14,6 @@ export default function Result(props) {
                         correctNotSelected: !answer.isSelected && answer.isCorrect && "correct--not--selected",
                     }
                     return (
-
                         <span
                             style={{ cursor: "default" }}
                             key={answer.id}
@@ -22,7 +21,6 @@ export default function Result(props) {
                         >
                             {answer.text}
                         </span>)
-
                 }
                 )}
 

@@ -118,7 +118,7 @@ export default function Quizz(props) {
                 <div className="flex-container--q-and-a">
                     {questionElements}
                     <div className="btn--and--result">
-                        <button onClick={checkAnswers}>Check answers</button>
+                        <button id="checkAnswers"onClick={checkAnswers}>Check answers</button>
                         {/* <button onClick={() => props.handleClick()}>Restart app</button> */}
                     </div>
                 </div>
@@ -138,7 +138,7 @@ export default function Quizz(props) {
                     {questionElements}
                     <div className="btn--and--result">
                         <div id="result">Correct: <b>{score} / {questions.length}</b></div>
-                        <button onClick={props.handleClick}>Restart app</button>
+                        <button id="restartBtn" onClick={props.handleClick}>Restart app</button>
                     </div>
                 </div>
             )
