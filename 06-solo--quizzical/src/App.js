@@ -5,10 +5,10 @@ import Quizz from "./Quizz";
 // Toggle screen selection between Welcome and App,
 function App() {
   const [startScreen, setStartScreen] = React.useState(true)
-  const [categorySelected, setCategorySelected] = React.useState()
+  const [quizInstance, setQuizInstance] = React.useState()
 
   function toggleScreen(category) {
-    setCategorySelected(category)
+    setQuizInstance(category)
     setStartScreen(prevScreen => !prevScreen)
   }
 
@@ -16,7 +16,7 @@ function App() {
     <div>
       {startScreen
         ? <Welcome handleClick={toggleScreen}/>
-        : <Quizz handleClick={toggleScreen} categorySelected={categorySelected}/>}
+        : <Quizz handleClick={toggleScreen} quizInstance={quizInstance}/>}
     </div>
   );
 }

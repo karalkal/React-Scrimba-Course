@@ -4,6 +4,7 @@ import React from "react"
 export default function Welcome(props) {
 
     const [categorySelected, setCategorySelected] = React.useState([])
+    const [difficultySelected, setDifficultySelected] = React.useState("")
 
     const categories = [
         ["General", "fa-solid fa-shuffle", 9],
@@ -50,14 +51,14 @@ export default function Welcome(props) {
                 <div id="quiz--difficulty">
                     <p>select Difficulty Level:</p>
                     <div id="difficulty--spans">
-                        <button id="dificulty--easy">Easy</button>
-                        <button id="dificulty--medium">Medium</button>
-                        <button id="dificulty--hard">Hard</button>
+                        <button id="dificulty--easy" onClick={() => setDifficultySelected("easy")}>Easy</button>
+                        <button id="dificulty--medium" onClick={() => setDifficultySelected("medium")}>Medium</button>
+                        <button id="dificulty--hard" onClick={() => setDifficultySelected("hard")}>Hard</button>
                     </div>
                 </div>
 
                 <div id="quiz--type">
-                <p>select Questions Type:</p>
+                    <p>select Questions Type:</p>
                     <div id="quiz--type--spans">
                         <button id="type--true--false">True / False</button>
                         <button id="type--multichoice">Multi-Choice</button>
@@ -65,7 +66,7 @@ export default function Welcome(props) {
                 </div>
             </div>
 
-            <button id="goBtn"onClick={() => props.handleClick(categorySelected)}>
+            <button id="goBtn" onClick={() => props.handleClick(categorySelected, difficultySelected)}>
                 GO!
             </button>
         </div>

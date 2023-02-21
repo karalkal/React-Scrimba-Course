@@ -14,10 +14,11 @@ export default function Quizz(props) {
 
     console.log(props)
 
-    const [catName, catIcon, catID] = props.categorySelected  // Array containing name, icon, id
+    const [catName, catIcon, catID] = props.quizInstance  // Array containing name, icon, id
+    const difficulty = undefined
 
     useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}`)
+        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}&difficulty=${difficulty}`)
             .then(response => response.json())
             .then(data => generateQuestionsArr(data.results))
     }, [])
