@@ -5,6 +5,7 @@ export default function Welcome(props) {
 
     const [categorySelected, setCategorySelected] = React.useState([])
     const [difficultySelected, setDifficultySelected] = React.useState("")
+    const [typeSelected, setTypeSelected] = React.useState("")
 
     const categories = [
         ["General", "fa-solid fa-shuffle", 9],
@@ -25,16 +26,12 @@ export default function Welcome(props) {
         ["Vehicles", "fa-solid fa-car-side", 28],
     ]
 
-    function selectCategory(cat) {
-        console.log(cat)
-    }
-
     return (
         <div className="welcome--container--flex">
             <h1 id="h1--welcome" >Quick Quiz</h1>
             <h2 id="h2--welcome">Test your knowledge</h2>
 
-            <div id="categories--container">
+            <div id="quiz--selection--container">
                 {categories.map(cat => {
                     const [catName, catIcon, catID] = cat
                     return (<button
@@ -46,7 +43,6 @@ export default function Welcome(props) {
                     </button>)
                 }
                 )}
-
 
                 <div id="quiz--difficulty">
                     <p>select Difficulty Level:</p>
@@ -60,15 +56,21 @@ export default function Welcome(props) {
                 <div id="quiz--type">
                     <p>select Questions Type:</p>
                     <div id="quiz--type--spans">
-                        <button id="type--true--false">True / False</button>
-                        <button id="type--multichoice">Multi-Choice</button>
+                        <button id="type--true--false" onClick={() => setTypeSelected("boolean")}>True / False</button>
+                        <button id="type--multichoice" onClick={() => setTypeSelected("multiple")}>Multi-Choice</button>
                     </div>
                 </div>
             </div>
 
-            <button id="goBtn" onClick={() => props.handleClick(categorySelected, difficultySelected)}>
-                GO!
-            </button>
+            {/* Display Go Btn only if all vars have values */}
+            {
+                categorySelected !== [] &&
+                difficultySelected !== "" &&
+                typeSelected !== "" &&
+                <button id="goBtn" onClick={() => props.handleClick(categorySelected, difficultySelected, typeSelected)}>
+                    GO!
+                </button>
+            }
         </div>
     )
 }

@@ -8,17 +8,16 @@ import Result from "./Result"
 
 export default function Quizz(props) {
 
-    const [questions, setQuestions] = useState()
+    const [questions, setQuestions] = useState([])
     const [hasSubmitted, setHasSubmitted] = useState(false)
     const [score, setScore] = useState(0)
 
-    console.log(props)
-
-    const [catName, catIcon, catID] = props.quizInstance  // Array containing name, icon, id
-    const difficulty = undefined
+    const [catName, catIcon, catID] = props.quizInstance.category  // Array containing name, icon, id
+    const difficulty = props.quizInstance.difficulty
+    const quizType = props.quizInstance.quizType
 
     useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}&difficulty=${difficulty}`)
+        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}&difficulty=${difficulty}&type=${quizType}`)
             .then(response => response.json())
             .then(data => generateQuestionsArr(data.results))
     }, [])
@@ -105,7 +104,8 @@ export default function Quizz(props) {
     }
 
     // ... AND finally - render page
-    if (questions) {
+    // If response NOT empty json
+    if (questions.length > 0) {
 
         // If rendering QUIZ
         if (!hasSubmitted) {
@@ -116,11 +116,15 @@ export default function Quizz(props) {
                     selectAnswer={selectAnswer} />) // will get back question and answer IDs
 
             return (
-                <div className="flex-container--q-and-a">
+                <div className="quiz--container">
+                    <div className="quiz--info">
+                        <div>category: <span>{catName}</span></div>
+                        <div>difficulty: <span>{difficulty}</span></div>
+                        <div>type: <span>{quizType}</span></div>
+                    </div>
                     {questionElements}
                     <div className="btn--and--result">
-                        <button id="checkAnswers"onClick={checkAnswers}>Check answers</button>
-                        {/* <button onClick={() => props.handleClick()}>Restart app</button> */}
+                        <button id="checkAnswers" onClick={checkAnswers}>Check answers</button>
                     </div>
                 </div>
             )
@@ -135,16 +139,41 @@ export default function Quizz(props) {
                     key={q.id} />)
 
             return (
-                <div className="flex-container--q-and-a">
+                <div className="quiz--container">
+                    <div className="quiz--info">
+                        <div>category: <span>{catName}</span></div>
+                        <div>difficulty: <span>{difficulty}</span></div>
+                        <div>type: <span>{quizType}</span></div>
+                    </div>
+
                     {questionElements}
                     <div className="btn--and--result">
-                        <div id="result">Correct: <b>{score} / {questions.length}</b></div>
                         <button id="restartBtn" onClick={props.handleClick}>Restart app</button>
+                        <div id="result">Correct: <b>{score} / {questions.length}</b></div>
                     </div>
                 </div>
             )
         }
     }
+
+    // If response EMPTY json 
+    else {
+        return (
+            <div className="quiz--container">
+                <div className="no--data">
+                    <h2>No valid response for:</h2>
+                    <div>category: <span>{catName}</span></div>
+                    <div>difficulty: <span>{difficulty}</span></div>
+                    <div>type: <span>{quizType}</span></div>
+                    <h2> Request to <a href={`https://opentdb.com/api.php?amount=10&category=${catID}&difficulty=${difficulty}&type=${quizType}`} target="_blank">this url</a> returned nothing.</h2>
+                </div>
+                <div className="btn--and--result">
+                    <button id="restartBtn" onClick={props.handleClick}>Restart app</button>
+                </div>
+            </div>
+        )
+    }
+
 
     // This function will change state of hasSubmitted, therefore will cause rerendering, 
     // then if hasSubmitted == true will go to results page, not very elegant
