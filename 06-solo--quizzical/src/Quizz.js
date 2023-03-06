@@ -13,11 +13,18 @@ export default function Quizz(props) {
     const [score, setScore] = useState(0)
 
     const [catName, catIcon, catID] = props.quizInstance.category  // Array containing name, icon, id
+
+    // construct querystring, if no difficulty and type set => blank, else url should look like:
+    // https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple
     const difficulty = props.quizInstance.difficulty
+    const difficultyQuerystring = difficulty === "any" ? "" : `&difficulty=${difficulty}`
+
     const quizType = props.quizInstance.quizType
+    const quizTypeQuerystring = quizType === "any" ? "" : `&type=${quizType}`
+
 
     useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}&difficulty=${difficulty}&type=${quizType}`)
+        fetch(`https://opentdb.com/api.php?amount=10&category=${catID}${difficultyQuerystring}${quizTypeQuerystring}`)
             .then(response => response.json())
             .then(data => generateQuestionsArr(data.results))
     }, [])

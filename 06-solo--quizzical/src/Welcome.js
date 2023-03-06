@@ -50,6 +50,7 @@ export default function Welcome(props) {
                         <button id="dificulty--easy" onClick={() => setDifficultySelected("easy")}>Easy</button>
                         <button id="dificulty--medium" onClick={() => setDifficultySelected("medium")}>Medium</button>
                         <button id="dificulty--hard" onClick={() => setDifficultySelected("hard")}>Hard</button>
+                        <button id="dificulty--any" onClick={() => setDifficultySelected("any")}>Any</button>
                     </div>
                 </div>
 
@@ -58,6 +59,7 @@ export default function Welcome(props) {
                     <div id="quiz--type--spans">
                         <button id="type--true--false" onClick={() => setTypeSelected("boolean")}>True / False</button>
                         <button id="type--multichoice" onClick={() => setTypeSelected("multiple")}>Multi-Choice</button>
+                        <button id="type--any" onClick={() => setTypeSelected("any")}>Any</button>
                     </div>
                 </div>
             </div>

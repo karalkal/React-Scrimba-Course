@@ -184,7 +184,7 @@ button {
 }
 
 #difficulty--spans>button {
-  width: 33%;
+  width: 24%;
   gap: 1%;
 }
 
@@ -199,10 +199,14 @@ button {
 #dificulty--hard {
   background-color: var(--auburn);
 }
+#dificulty--any {
+  background-color: var(--midnight-green);
+  color: var(--vanilla) !important;
+}
 
 #quiz--type--spans>button {
-  width: 49%;
-  gap: 2%;
+  width: 32.5%;
+  gap: 1%;
   background-image: linear-gradient(to right, var(--gamboge) 0%, var(--vanilla) 46%, var(--vanilla) 54%, var(--alloy-orange) 100%);
 }
 
@@ -267,23 +271,36 @@ button {
   flex-direction: column;
   justify-content: center;
 }
+/*
+
+--rich-black: hsla(197, 100%, 5%, 1);
+--midnight-green: hsla(190, 100%, 23%, 1);
+--dark-cyan: hsla(181, 88%, 31%, 1);
+--tiffany-blue: hsla(160, 41%, 70%, 1);
+--vanilla: hsla(45, 60%, 78%, 1);
+--gamboge: hsla(39, 100%, 47%, 1);
+--alloy-orange: hsla(30, 98%, 40%, 1);
+--rust: hsla(19, 97%, 37%, 1);
+--rufous: hsla(5, 81%, 38%, 1);
+--auburn: hsla(358, 64%, 37%, 1);
+*/
 
 .question--and--answers--div {
-  background-color: hsla(160, 41%, 70%, .7);
+  background-color:  hsla(30, 98%, 40%, .2);  ;
   padding: 11px 8px;
-  border-bottom: 4px solid var(--auburn);
+  border-bottom: 4px solid var(--alloy-orange);
   margin-bottom: 11px;
 }
 
 .question--and--answers--div--correct {
-  background-color: hsla(181, 88%, 31%, .4);
+  background-color: hsla(181, 88%, 31%, .2);
   padding: 11px 8px;
-  border-bottom: 4px solid var(--auburn);
+  border-bottom: 4px solid var(--dark-cyan);
   margin-bottom: 11px;
 }
 
 .question--and--answers--div--incorrect {
-  background-color: hsla(358, 64%, 37%, .4);
+  background-color: hsla(358, 64%, 37%, .2);
   padding: 11px 8px;
   border-bottom: 4px solid var(--auburn);
   margin-bottom: 11px;
