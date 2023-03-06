@@ -38,7 +38,8 @@ export default function Quizz(props) {
                     id: nanoid(),
                     text: decode(q.question),
                     answersArr: answersArr,
-                    isAnswered: false
+                    isAnswered: false,
+                    answeredCorrectly: false,
                 }
             )
         }
@@ -183,6 +184,7 @@ export default function Quizz(props) {
             let correctAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isCorrect))
             let givenAnswerIndex = q.answersArr.indexOf(q.answersArr.find(a => a.isSelected))
             if (correctAnswerIndex === givenAnswerIndex) {
+                q.answeredCorrectly = true
                 setScore(prevValue => prevValue + 1)
             }
         }

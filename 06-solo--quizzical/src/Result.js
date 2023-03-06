@@ -1,8 +1,13 @@
 export default function Result(props) {
     let answers = props.question.answersArr
 
+    let isAnswered = props.question.isAnswered
+    let answeredCorrectly = props.question.answeredCorrectly
+
+    let divQuestionAndAnswersCSSClass = isAnswered && answeredCorrectly ? "question--and--answers--div--correct" : "question--and--answers--div--incorrect"
+
     return (
-        <div className="container--question--plus--answers">
+        <div className={divQuestionAndAnswersCSSClass}>
             <h2 className="question">{props.question.text}</h2>
             <div className="answers--div">
 
@@ -25,7 +30,6 @@ export default function Result(props) {
                 )}
 
             </div>
-            <hr />
         </div>
     )
 }
