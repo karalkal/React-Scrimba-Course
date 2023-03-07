@@ -66,7 +66,7 @@ export default function Welcome(props) {
 
             {/* Display Go Btn only if all vars have values */}
             {
-                categorySelected !== [] &&
+                categorySelected.length > 0 &&
                 difficultySelected !== "" &&
                 typeSelected !== "" &&
                 <button id="goBtn" onClick={() => props.handleClick(categorySelected, difficultySelected, typeSelected)}>
