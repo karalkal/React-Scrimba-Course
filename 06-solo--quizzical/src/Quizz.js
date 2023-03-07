@@ -142,7 +142,6 @@ export default function Quizz(props) {
         else {
             const questionElements = questions.map(q =>
                 <Result
-                    score={score}
                     question={q}
                     key={q.id} />)
 

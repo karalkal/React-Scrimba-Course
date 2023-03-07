@@ -8,15 +8,15 @@ function App() {
   const [quizInstance, setQuizInstance] = React.useState({})
 
   function toggleScreen(category, difficulty, quizType) {
-    setQuizInstance(
-      {
-        category,
-        difficulty,
-        quizType
-      }
-    )
-    
     setStartScreen(prevScreen => !prevScreen)
+      setQuizInstance(
+        {
+          category,
+          difficulty,
+          quizType
+        }
+      )    
+
   }
 
   return (
