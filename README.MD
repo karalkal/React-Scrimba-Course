@@ -11,7 +11,7 @@ It goes without saying that the latter is far better than my own creations.
 
 #### Contents
 
-01. Files with names tarting with 01.* to 06.* are from the Basic course, which [could be found here ](https://scrimba.com/learn/learnreact).
+01. Files with names tarting with 01.* to 10.* are from the Basic course, which [could be found here ](https://scrimba.com/learn/learnreact).
 In many cases they will demonstrate the progress of developing an app.
 The app in 06-solo--quizzical is a solo project and differs significantly from the original design and idea - in my humble opinion for the better. 
 02. Files in 07-class-components folder are from [Learn Class Components in React](https://scrimba.com/learn/classcomponents/)
