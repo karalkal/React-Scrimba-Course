@@ -1,0 +1,29 @@
+.dice--green,
+.dice--white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 35px;
+    width: 35px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #2B283A;
+
+    cursor: pointer;
+}
+
+.dice--green>p,
+.dice--white>p {
+    font-family: 'Karla', sans-serif;
+    color: #2B283A;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.dice--green {
+    background-color: #59E391;
+}
+
+.dice--white {
+    background-color: #FFFFFF;
+}
